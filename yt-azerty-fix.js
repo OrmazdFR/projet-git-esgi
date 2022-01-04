@@ -11,9 +11,10 @@ function keyUpping(original, faked) {
 }
 
 document.addEventListener('keydown', (e) => {
-	e = e || window.event;
 	const el = document.activeElement.id
+	e.preventDefault
 	if (el != "search" && el != "contenteditable-root") {
+		e = e || window.event;
 		switch (e.keyCode) {
 			case 59:
 			case 169:
