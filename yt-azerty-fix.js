@@ -25,7 +25,8 @@ document.addEventListener('keydown', (e) => {
 				}))
 				break;
 			case 90:
-				var kcode = 87;
+			case 81:
+				var kcode = e.keyCode == 90 ? 87 : 65;
 				do {
 					document.dispatchEvent(new KeyboardEvent("keydown", {
 						'shiftKey': false,
