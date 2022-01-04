@@ -1,3 +1,15 @@
+function keyUpping(original, faked) {
+	document.addEventListener('keyup', (ev) => {
+		if (ev.keyCode == original) {
+			document.dispatchEvent(new KeyboardEvent("keyup", {
+				'shiftKey': false,
+				'keyCode': faked
+			}))
+		}
+	})
+	return 1
+}
+
 document.addEventListener('keydown', (e) => {
 	e = e || window.event;
 	const el = document.activeElement.id
