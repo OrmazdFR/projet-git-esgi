@@ -12,6 +12,12 @@ document.addEventListener('keydown', (e) => {
 				'shiftKey': e.shiftKey
 				}))
 				break;
+			case 90:
+				var kcode = 87;
+				document.dispatchEvent(new KeyboardEvent("keydown", {
+					'shiftKey': false,
+					'keyCode': kcode
+				}))
 		}
 	}
 });
