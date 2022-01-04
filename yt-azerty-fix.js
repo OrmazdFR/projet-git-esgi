@@ -20,16 +20,18 @@ document.addEventListener('keydown', (e) => {
 				// Next Frame (while paused) + Increase playback rate 59
 				var kcode = e.keyCode == 59 ? 190 : 173;
 				document.dispatchEvent(new KeyboardEvent("keydown", {
-				'keyCode': kcode,
-				'shiftKey': e.shiftKey
+					'keyCode': kcode,
+					'shiftKey': e.shiftKey
 				}))
 				break;
 			case 90:
 				var kcode = 87;
-				document.dispatchEvent(new KeyboardEvent("keydown", {
-					'shiftKey': false,
-					'keyCode': kcode
-				}))
+				do {
+					document.dispatchEvent(new KeyboardEvent("keydown", {
+						'shiftKey': false,
+						'keyCode': kcode
+					}))
+				} while (!keyUpping(e.keyCode, kcode));
 		}
 	}
 });
